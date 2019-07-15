@@ -1,0 +1,26 @@
+int wordCount(char *str)
+{
+    int wc=0;
+    int state=0;
+    while(*str)
+    {
+        if(*str==' ' || *str=='\t' || *str=='\n')
+        {
+            state=0;
+        }
+        else if(state==0)
+        {
+            state=1;
+            wc++;
+        }
+        
+        ++str;
+    }
+    return wc;
+}
+int main()
+{
+   char str[] = "One two     three\n four\tfive ";  
+    cout<<"No of words : "<< wordCount(str);  
+    return 0;  
+}
