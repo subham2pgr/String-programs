@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+const int NO_OF_CHARS=256;
+
+bool canFormPalindrome(char *str1)
+{
+    int i;
+    int count[NO_OF_CHARS]={0};
+    for( i=0;str1[i];i++)
+    {
+      count[str1[i]]++;
+    }
+
+     int odd=0;      
+    for(int i=0;i<NO_OF_CHARS;i++)
+    {
+        if(count[i]&1)
+        odd++;
+        
+        if(odd>1)
+        return false;
+    }
+    return true;
+    
+}
+int main()
+{
+   canFormPalindrome("geeksogeeks")?cout<<"Yes":cout<<"No"<<endl;
+   canFormPalindrome("geeksforgeeks")?cout<<"Yes":cout<<"No";
+    return 0; 
+}
