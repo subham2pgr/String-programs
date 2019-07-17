@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+const int NO_OF_CHARS=26;
+
+int countManipulations(string str1,string str2)
+{
+    int result=0;
+   int count1[NO_OF_CHARS]={0};
+  
+   for(int i=0;i<str1.length();i++)
+   count1[str1[i]-'a']++;
+   
+    for(int i=0;i<str2.length();i++)
+    {
+     count1[str2[i]-'a']--;
+     if(count1[str2[i]-'a']<0)
+         result++;
+    }
+     
+     
+     return result;
+   
+   
+   
+}
+    int main() 
+{ 
+     string s1 = "ddcf";  
+        string s2 = "cedk";  
+          
+        cout<<countManipulations(s1, s2); 
+}
