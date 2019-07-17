@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+const int NO_OF_CHARS=26;
+
+int remAnagram(string str1,string str2)
+{
+    int result=0;
+   int count1[NO_OF_CHARS]={0};
+   int count2[NO_OF_CHARS]={0};
+   for(int i=0;str1[i];i++)
+   count1[str1[i]-'a']++;
+   
+    for(int i=0;str2[i];i++)
+     count2[str2[i]-'a']++;
+     
+     for(int i=0;i<26;i++)
+     result+=abs(count1[i]-count2[i]);
+     
+     return result;
+   
+   
+   
+}
+    int main() 
+{ 
+    string str1 = "bcadeh", str2 = "hea"; 
+    cout << remAnagram(str1, str2); 
+    return 0; 
+}
