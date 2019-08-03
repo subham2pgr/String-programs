@@ -1,0 +1,35 @@
+
+Soln : 1
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void printMinIndexChar(string str,string pat)
+{
+    int minIndex=INT_MAX;
+    int m=pat.size();
+    int n=str.size();
+    for(int i=0;i< m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            if(pat[i]==str[j] && j<minIndex)
+            {
+                minIndex=j;
+                break;
+            }
+              
+        }
+    }
+    if(minIndex!=INT_MIN)
+      cout<<"Minimum index character "<<str[minIndex];
+    else
+      cout<<"No character present";
+}
+int main() 
+{ 
+    string str = "geeksforgeeks"; 
+    string patt = "set"; 
+    printMinIndexChar(str, patt); 
+    return 0; 
+} 
