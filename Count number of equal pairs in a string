@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+ const int MAX_CHAR=256;
+ int countPairs(string s)
+ {
+     int cnt[MAX_CHAR]={0};
+     for(int i=0;i<s.length();i++)
+     {
+         cnt[s[i]]++;
+     }
+     int ans=0;
+     for(int i=0;i<MAX_CHAR;i++)
+     {
+         ans+=cnt[i]*cnt[i];
+     }
+     return ans;
+     
+ }
+int main() 
+{ 
+    string s = "geeksforgeeks"; 
+    cout << countPairs(s); 
+    return 0; 
+} 
+ 
