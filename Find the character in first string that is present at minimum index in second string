@@ -21,7 +21,7 @@ void printMinIndexChar(string str,string pat)
               
         }
     }
-    if(minIndex!=INT_MIN)
+    if(minIndex!=INT_MAX)
       cout<<"Minimum index character "<<str[minIndex];
     else
       cout<<"No character present";
